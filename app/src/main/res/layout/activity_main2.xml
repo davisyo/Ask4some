@@ -5,18 +5,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <TextView android:text="@string/welcome" android:layout_width="wrap_content"
+    <TextView android:text="@string/welcome2" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:id="@+id/textView2" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GoTo2"
-        android:id="@+id/button1"
+        android:text="GoTo1"
+        android:id="@+id/button2"
         android:layout_marginTop="47dp"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:nestedScrollingEnabled="false" />
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
