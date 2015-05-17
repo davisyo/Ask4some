@@ -17,13 +17,23 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    @Override
+    public void onCreate (Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-    public void sendMessage(View view)
-    {
-        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-        startActivity(intent);
+        Button switchButton = (Button) findViewById(R.id.button1);
+
+        switchButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onclick (View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+
+            }
+        });
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
