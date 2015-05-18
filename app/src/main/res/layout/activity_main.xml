@@ -9,6 +9,39 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/question_input"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="What is your question?"
+        android:id="@+id/textView2"
+        android:layout_marginTop="114dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send question"
+        android:id="@+id/send_question"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/question_input"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onSendClick" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,6 +50,19 @@
         android:layout_marginTop="47dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:nestedScrollingEnabled="false" />
+        android:nestedScrollingEnabled="false"
+        android:onClick="onGoto2Click" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/show_question"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/send_question"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/question_input"
+        android:layout_alignEnd="@+id/question_input" />
 
 </RelativeLayout>
