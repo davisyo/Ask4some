@@ -47,8 +47,10 @@
         android:layout_height="wrap_content"
         android:text="GoTo2"
         android:id="@+id/button1"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="100dp"
+        android:nestedScrollingEnabled="false"
         android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
         android:layout_centerHorizontal="true"
         android:nestedScrollingEnabled="false"
         android:onClick="onGoto2Click" />

@@ -15,13 +15,28 @@ public class MainActivity extends ActionBarActivity {
 
     private String question_text;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
+    public void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button switchButton = (Button) findViewById(R.id.button1);
+
+        switchButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onclick (View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
+    public void sendMessage(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
