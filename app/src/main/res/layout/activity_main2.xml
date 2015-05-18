@@ -14,9 +14,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GoTo1"
-        android:id="@+id/button2"
+        android:id="@+id/goto1"
         android:layout_marginTop="47dp"
         android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="onGoto1Click" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/question_list"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Questions:"
+        android:id="@+id/textView4"
+        android:layout_above="@+id/question_list"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="19dp" />
 
 </RelativeLayout>

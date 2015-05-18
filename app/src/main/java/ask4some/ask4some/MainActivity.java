@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 
+import java.lang.reflect.Array;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -27,6 +29,7 @@ public class MainActivity extends ActionBarActivity {
             //@Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("parametro", question_text);
                 startActivity(intent);
             }
         });
@@ -61,7 +64,6 @@ public class MainActivity extends ActionBarActivity {
 
         TextView show_question = (TextView) findViewById(R.id.show_question);
         show_question.setText(this.question_text);
-        //show_question.setText(this.question_text);
 
     }
 
