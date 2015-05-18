@@ -19,17 +19,20 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button switchButton = (Button) findViewById(R.id.button1);
+        Button goto2 = (Button) findViewById(R.id.button1);
 
-        switchButton.setOnClickListener(new View.OnClickListener() {
+        // Accion del boton
+        goto2.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onclick (View v) {
+            //@Override
+            public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 startActivity(intent);
-
             }
         });
+
+
+
     }
 
     public void sendMessage(View view)
