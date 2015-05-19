@@ -10,18 +10,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 
-import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 
 public class MainActivity extends ActionBarActivity {
 
-    private String question_text;
+    private ArrayList <Question> question_list;
+    private Question user_question;
 
     public void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button goto2 = (Button) findViewById(R.id.button1);
+        Button goto2 = (Button) findViewById(R.id.goto2);
 
         // Accion del boton
         goto2.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +30,7 @@ public class MainActivity extends ActionBarActivity {
             //@Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putExtra("parametro", question_text);
+                intent.putExtra("parametro", user_question);
                 startActivity(intent);
             }
         });
@@ -60,10 +61,13 @@ public class MainActivity extends ActionBarActivity {
         EditText mEdit = (EditText)findViewById(R.id.question_input);
 
         // Store the question in a variable
-        this.question_text =  mEdit.getText().toString();
+        String q = mEdit.getText().toString();
+        // Create a new question without answer
+        this.user_question = new Question (q,"still no answer");
+        question_list.add(user_question);
 
         TextView show_question = (TextView) findViewById(R.id.show_question);
-        show_question.setText(this.question_text);
+        show_question.setText(this.user_question.getQuestion_text());
 
     }
 

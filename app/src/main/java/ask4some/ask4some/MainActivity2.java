@@ -20,9 +20,9 @@ public class MainActivity2 extends ActionBarActivity {
         setContentView(R.layout.activity_main2);
 
         // Read the question passed as parameter from the first activity
-        String question = getIntent().getExtras().getString("parametro");
+        Question question = (Question) getIntent().getExtras().getSerializable("parametro");
         TextView question_list = (TextView) findViewById(R.id.question_list);
-        question_list.setText(question);
+        question_list.setText(question.getQuestion_text());
 
     }
 

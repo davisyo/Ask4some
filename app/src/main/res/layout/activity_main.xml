@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GoTo2"
-        android:id="@+id/button1"
+        android:id="@+id/goto2"
         android:nestedScrollingEnabled="false"
         android:layout_below="@+id/show_question"
         android:layout_toRightOf="@+id/textView"
