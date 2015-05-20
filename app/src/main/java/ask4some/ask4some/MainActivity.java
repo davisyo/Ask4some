@@ -81,8 +81,8 @@ public class MainActivity extends ActionBarActivity {
         // Save the list of questions into a file
         Serializa(question_list);
 
-        TextView show_question = (TextView) findViewById(R.id.show_question);
-        show_question.setText(user_question.getQuestion_text());
+        //TextView show_question = (TextView) findViewById(R.id.show_question);
+        //show_question.setText(user_question.getQuestion_text());
 
     }
 
@@ -109,7 +109,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     // For saving the questions in a file
-    protected void Serializa(QuestionList a){
+    public void Serializa(QuestionList a){
         FileOutputStream fos;
         try {
             fos = openFileOutput(filename, Context.MODE_PRIVATE);
@@ -127,7 +127,7 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    protected QuestionList Desserializa(String filename){
+    public QuestionList Desserializa(String filename){
         FileInputStream fin;
         QuestionList afromfile = null;
 

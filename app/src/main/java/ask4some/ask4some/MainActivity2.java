@@ -31,6 +31,7 @@ public class MainActivity2 extends ActionBarActivity {
 
     protected String filename = "questionlist.dat";
     protected ListView listView;
+    private QuestionList ql;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,7 @@ public class MainActivity2 extends ActionBarActivity {
         question_list.setText(all_questions);*/
 
         // Retrieve saved question from the file
-        QuestionList ql = Desserializa(filename);
+        this.ql = Desserializa(filename);
         //TextView question_saved = (TextView) findViewById(R.id.saved_question);
         //if(ql != null) question_saved.setText(ql.toString());
 
@@ -95,19 +96,29 @@ public class MainActivity2 extends ActionBarActivity {
                 int itemPosition     = position;
 
                 // ListView Clicked item value
-                String  itemValue    = (String) listView.getItemAtPosition(position);
+                String  itemValue    = (String) listView.getItemAtPosition(position).toString();
 
                 // Show Alert
                 Toast.makeText(getApplicationContext(),
                         "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
                         .show();
 
+                // Jumping to Answer screen
+                gotoAnswer(itemPosition);
+
+
             }
+
 
         });
     }
 
-
+    public void gotoAnswer(int itemPosition){
+        Intent intent = new Intent(this, Answer.class);
+        intent.putExtra("parametro",this.ql);
+        intent.putExtra("index",itemPosition);
+        startActivity(intent);
+    }
 
     public void onGoto1Click(View v){
         Button Goto1 = (Button) v;
@@ -138,7 +149,7 @@ public class MainActivity2 extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    protected QuestionList Desserializa(String filename){
+    public QuestionList Desserializa(String filename){
         FileInputStream fin;
         QuestionList afromfile = null;
 

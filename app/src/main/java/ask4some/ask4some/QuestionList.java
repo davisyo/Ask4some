@@ -7,8 +7,10 @@ import android.widget.Toast;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.OptionalDataException;
 import java.io.Serializable;
 import java.io.StreamCorruptedException;
@@ -42,6 +44,7 @@ import java.util.Map;
 /**
  * Created by David on 19/05/2015.
  */
+@SuppressWarnings("serial")
 public class QuestionList implements Serializable {
 
     private ArrayList<Question> question_list;
@@ -65,6 +68,11 @@ public class QuestionList implements Serializable {
 
     public void setQuestion_list(ArrayList<Question> question_list) {
         this.question_list = question_list;
+    }
+
+    public Question getQuestion(int index){
+        Question q = this.question_list.get(index);
+        return q;
     }
 
     @Override
@@ -109,4 +117,24 @@ public class QuestionList implements Serializable {
                 android.R.layout.simple_list_item_2,
                 fromMapKey, toLayoutId);
     }
+
+    // For saving the questions in a file
+    public void Serializa(String filename, Context c){
+        FileOutputStream fos;
+        try {
+            fos = c.openFileOutput(filename, c.MODE_PRIVATE);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(this);
+            oos.close();
+            Toast.makeText(c, "Objeto correctamente serializado y guardado", Toast.LENGTH_SHORT).show();
+        } catch (FileNotFoundException e) {
+            Toast.makeText(c, "Error: archivo no encontrado", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            Toast.makeText(c, "Error", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+    }
+
 }
