@@ -31,4 +31,11 @@ public class Question implements Serializable{
         this.answer_text = answer_text;
     }
 
+    @Override
+    public String toString() {
+        return "Question{" +
+                "question_text='" + question_text + '\'' +
+                ", answer_text='" + answer_text + '\'' +
+                '}';
+    }
 }

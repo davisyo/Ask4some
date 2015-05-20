@@ -45,13 +45,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GoTo2"
+        android:text="Questions"
         android:id="@+id/goto2"
         android:nestedScrollingEnabled="false"
-        android:layout_below="@+id/show_question"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
-        android:onClick="onGoto2Click" />
+        android:onClick="onGoto2Click"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/show_question"
+        android:layout_alignEnd="@+id/show_question" />
         android:layout_centerHorizontal="true"
         android:nestedScrollingEnabled="false"
         android:onClick="onGoto2Click" />
